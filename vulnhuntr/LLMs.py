@@ -118,14 +118,14 @@ class ChatGPT(LLM):
             # For analyzing files and context code, use the beta endpoint and parse so we can feed it the pydantic model
             if response_model:
                 return self.client.beta.chat.completions.parse(
-                    model="gpt-4o-2024-08-06",
+                    model="gpt-4o-mini-2024-07-18",
                     messages=messages,
                     max_tokens=max_tokens,
                     response_format=response_model
                 )
             else:
                 return self.client.chat.completions.create(
-                    model="gpt-4o-2024-08-06",
+                    model="gpt-4o-mini-2024-07-18",
                     messages=messages,
                     max_tokens=max_tokens,
                 )
